@@ -8,12 +8,14 @@ int rectHeight = height;
 float circleRadius = 50;
 
 Kreis k1;
+Kreis k2;
 
 void setup()
 {
   fullScreen();
   background(backgroundColor);
-  k1 = new Kreis(circleRadius);
+  k1 = new Kreis(circleRadius, true);
+  k2 = new Kreis(circleRadius, false);
   rectHeight = height;
   xRect = width/2 -10;
 }
@@ -24,6 +26,7 @@ void draw()
   fill(50);
   rect(xRect, yRect, rectWidth, rectHeight);
   line(width / 2, 0, width/2, height);
-  k1.followMouse();
+  k1.move();
+  k2.move();
   
 }
