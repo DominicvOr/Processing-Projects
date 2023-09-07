@@ -22,7 +22,11 @@ void setup()
 
 void draw()
 {
-  background(backgroundColor);
+  if(!mousePressed)
+  {
+    background(backgroundColor); 
+  }
+  
   fill(50);
   rect(xRect, yRect, rectWidth, rectHeight);
   line(width / 2, 0, width/2, height);
