@@ -18,14 +18,14 @@ void draw()
   for (int i = 0; i < balls.size(); i++)
   {
     balls.get(i).move();
-    if(balls.get(i).getSpeed() < 1 &&  balls.get(i).getSpeed() > 0 && balls.get(i).y > height - 20)
+    if(balls.get(i).getSpeedY() < 1 &&  balls.get(i).getSpeedY() > 0 && balls.get(i).y > height - 20)
     {
        balls.remove(i); 
     }
   }
   if(mousePressed)
   {
-    balls.add(new Ball(mouseX, mouseY, 10));
+    balls.add(new Ball(mouseX, mouseY, 10, random(-30,30)));
   }
   
   
@@ -34,5 +34,5 @@ void draw()
 
 void mouseClicked()
 {
-  balls.add(new Ball(mouseX, mouseY, 10));
+  balls.add(new Ball(mouseX, mouseY, 10, random(0,30)));
 }
