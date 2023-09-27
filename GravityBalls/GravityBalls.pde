@@ -15,6 +15,9 @@ void setup()
 void draw()
 {
   background(255);
+  fill(0);
+  textSize(100);
+  text("Ball count:" + balls.size(), width/2, 100);
   for (int i = 0; i < balls.size(); i++)
   {
     balls.get(i).move();
@@ -25,7 +28,7 @@ void draw()
   }
   if(mousePressed)
   {
-    balls.add(new Ball(mouseX, mouseY, 10, random(-30,30)));
+    balls.add(new Ball(mouseX, mouseY, 10, random(-100,100)));
   }
   
   
